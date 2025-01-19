@@ -1,0 +1,495 @@
+{
+ "Flash": {
+  "Settings": [
+   {
+    "id": "Notification/Type",
+    "label": "Notification/Type",
+    "value": "0"
+   },
+   {
+    "id": "Notification/T1",
+    "label": "Notification/T1",
+    "value": ""
+   },
+   {
+    "id": "Notification/T2",
+    "label": "Notification/T2",
+    "value": ""
+   },
+   {
+    "id": "Notification/TS",
+    "label": "Notification/TS",
+    "value": ""
+   },
+   {
+    "id": "Telnet/Enable",
+    "label": "Telnet/Enable",
+    "value": "1"
+   },
+   {
+    "id": "Telnet/Port",
+    "label": "Telnet/Port",
+    "value": "23"
+   },
+   {
+    "id": "HTTP/BlockDuringMotion",
+    "label": "HTTP/BlockDuringMotion",
+    "value": "1"
+   },
+   {
+    "id": "HTTP/Enable",
+    "label": "HTTP/Enable",
+    "value": "1"
+   },
+   {
+    "id": "HTTP/Port",
+    "label": "HTTP/Port",
+    "value": "80"
+   },
+   {
+    "id": "MDNS/Enable",
+    "label": "MDNS/Enable",
+    "value": "1"
+   },
+   {
+    "id": "WiFi/PsMode",
+    "label": "WiFi/PsMode",
+    "value": "0"
+   },
+   {
+    "id": "WiFi/Mode",
+    "label": "WiFi/Mode",
+    "value": "3"
+   },
+   {
+    "id": "Sta/Password",
+    "label": "Sta/Password",
+    "value": "********"
+   },
+   {
+    "id": "Sta/MinSecurity",
+    "label": "Sta/MinSecurity",
+    "value": "3"
+   },
+   {
+    "id": "WiFi/FastScan",
+    "label": "WiFi/FastScan",
+    "value": "0"
+   },
+   {
+    "id": "Sta/IPMode",
+    "label": "Sta/IPMode",
+    "value": "0"
+   },
+   {
+    "id": "Sta/IP",
+    "label": "Sta/IP",
+    "value": "0.0.0.0"
+   },
+   {
+    "id": "Sta/Gateway",
+    "label": "Sta/Gateway",
+    "value": "0.0.0.0"
+   },
+   {
+    "id": "Sta/Netmask",
+    "label": "Sta/Netmask",
+    "value": "0.0.0.0"
+   },
+   {
+    "id": "AP/Country",
+    "label": "AP/Country",
+    "value": "0"
+   },
+   {
+    "id": "AP/SSID",
+    "label": "AP/SSID",
+    "value": "BeachMachine"
+   },
+   {
+    "id": "AP/Password",
+    "label": "AP/Password",
+    "value": "********"
+   },
+   {
+    "id": "AP/IP",
+    "label": "AP/IP",
+    "value": "192.168.0.1"
+   },
+   {
+    "id": "AP/Channel",
+    "label": "AP/Channel",
+    "value": "1"
+   },
+   {
+    "id": "Hostname",
+    "label": "Hostname",
+    "value": "fluidnc"
+   },
+   {
+    "id": "Sta/SSID",
+    "label": "Sta/SSID",
+    "value": "Chacha"
+   },
+   {
+    "id": "GCode/Echo",
+    "label": "GCode/Echo",
+    "value": "0"
+   },
+   {
+    "id": "Start/Message",
+    "label": "Start/Message",
+    "value": "Grbl \\V [FluidNC \\B (\\R) \\H]"
+   },
+   {
+    "id": "Firmware/Build",
+    "label": "Firmware/Build",
+    "value": ""
+   },
+   {
+    "id": "SD/FallbackCS",
+    "label": "SD/FallbackCS",
+    "value": "-1"
+   },
+   {
+    "id": "Report/Status",
+    "label": "Report/Status",
+    "value": "1"
+   },
+   {
+    "id": "Config/Filename",
+    "label": "Config/Filename",
+    "value": "k40.yaml"
+   },
+   {
+    "id": "Message/Level",
+    "label": "Message/Level",
+    "value": "3"
+   }
+  ]
+ },
+ "Running": {
+  "Config": [
+   {
+    "id": "/board",
+    "label": "/board",
+    "value": "MKS-DLC32"
+   },
+   {
+    "id": "/name",
+    "label": "/name",
+    "value": "BeachMachine"
+   },
+   {
+    "id": "/meta",
+    "label": "/meta",
+    "value": "V0_ameisso"
+   },
+   {
+    "id": "/stepping/engine",
+    "label": "/stepping/engine",
+    "value": "2"
+   },
+   {
+    "id": "/stepping/idle_ms",
+    "label": "/stepping/idle_ms",
+    "value": "254"
+   },
+   {
+    "id": "/stepping/pulse_us",
+    "label": "/stepping/pulse_us",
+    "value": "6"
+   },
+   {
+    "id": "/stepping/dir_delay_us",
+    "label": "/stepping/dir_delay_us",
+    "value": "10"
+   },
+   {
+    "id": "/stepping/disable_delay_us",
+    "label": "/stepping/disable_delay_us",
+    "value": "0"
+   },
+   {
+    "id": "/stepping/segments",
+    "label": "/stepping/segments",
+    "value": "12"
+   },
+   {
+    "id": "/sdcard/frequency_hz",
+    "label": "/sdcard/frequency_hz",
+    "value": "8000000"
+   },
+   {
+    "id": "/axes/homing_runs",
+    "label": "/axes/homing_runs",
+    "value": "2"
+   },
+   {
+    "id": "/axes/x/steps_per_mm",
+    "label": "/axes/x/steps_per_mm",
+    "value": "157.500"
+   },
+   {
+    "id": "/axes/x/max_rate_mm_per_min",
+    "label": "/axes/x/max_rate_mm_per_min",
+    "value": "5000.000"
+   },
+   {
+    "id": "/axes/x/acceleration_mm_per_sec2",
+    "label": "/axes/x/acceleration_mm_per_sec2",
+    "value": "1000.000"
+   },
+   {
+    "id": "/axes/x/max_travel_mm",
+    "label": "/axes/x/max_travel_mm",
+    "value": "313.000"
+   },
+   {
+    "id": "/axes/x/soft_limits",
+    "label": "/axes/x/soft_limits",
+    "value": "1"
+   },
+   {
+    "id": "/axes/x/motor0/hard_limits",
+    "label": "/axes/x/motor0/hard_limits",
+    "value": "0"
+   },
+   {
+    "id": "/axes/x/motor0/pulloff_mm",
+    "label": "/axes/x/motor0/pulloff_mm",
+    "value": "1.000"
+   },
+   {
+    "id": "/axes/y/steps_per_mm",
+    "label": "/axes/y/steps_per_mm",
+    "value": "157.500"
+   },
+   {
+    "id": "/axes/y/max_rate_mm_per_min",
+    "label": "/axes/y/max_rate_mm_per_min",
+    "value": "5000.000"
+   },
+   {
+    "id": "/axes/y/acceleration_mm_per_sec2",
+    "label": "/axes/y/acceleration_mm_per_sec2",
+    "value": "1000.000"
+   },
+   {
+    "id": "/axes/y/max_travel_mm",
+    "label": "/axes/y/max_travel_mm",
+    "value": "230.000"
+   },
+   {
+    "id": "/axes/y/soft_limits",
+    "label": "/axes/y/soft_limits",
+    "value": "1"
+   },
+   {
+    "id": "/axes/y/motor0/hard_limits",
+    "label": "/axes/y/motor0/hard_limits",
+    "value": "0"
+   },
+   {
+    "id": "/axes/y/motor0/pulloff_mm",
+    "label": "/axes/y/motor0/pulloff_mm",
+    "value": "1.000"
+   },
+   {
+    "id": "/axes/z/steps_per_mm",
+    "label": "/axes/z/steps_per_mm",
+    "value": "157.750"
+   },
+   {
+    "id": "/axes/z/max_rate_mm_per_min",
+    "label": "/axes/z/max_rate_mm_per_min",
+    "value": "12000.000"
+   },
+   {
+    "id": "/axes/z/acceleration_mm_per_sec2",
+    "label": "/axes/z/acceleration_mm_per_sec2",
+    "value": "500.000"
+   },
+   {
+    "id": "/axes/z/max_travel_mm",
+    "label": "/axes/z/max_travel_mm",
+    "value": "80.000"
+   },
+   {
+    "id": "/axes/z/soft_limits",
+    "label": "/axes/z/soft_limits",
+    "value": "1"
+   },
+   {
+    "id": "/axes/z/motor0/hard_limits",
+    "label": "/axes/z/motor0/hard_limits",
+    "value": "0"
+   },
+   {
+    "id": "/axes/z/motor0/pulloff_mm",
+    "label": "/axes/z/motor0/pulloff_mm",
+    "value": "1.000"
+   },
+   {
+    "id": "/coolant/delay_ms",
+    "label": "/coolant/delay_ms",
+    "value": "0"
+   },
+   {
+    "id": "/probe/check_mode_start",
+    "label": "/probe/check_mode_start",
+    "value": "1"
+   },
+   {
+    "id": "/probe/hard_stop",
+    "label": "/probe/hard_stop",
+    "value": "0"
+   },
+   {
+    "id": "/macros/startup_line0",
+    "label": "/macros/startup_line0",
+    "value": ""
+   },
+   {
+    "id": "/macros/startup_line1",
+    "label": "/macros/startup_line1",
+    "value": ""
+   },
+   {
+    "id": "/macros/Macro0",
+    "label": "/macros/Macro0",
+    "value": "$SD/Run=lasertest.gcode"
+   },
+   {
+    "id": "/macros/Macro1",
+    "label": "/macros/Macro1",
+    "value": "$SD/Run=home.gcode"
+   },
+   {
+    "id": "/macros/Macro2",
+    "label": "/macros/Macro2",
+    "value": ""
+   },
+   {
+    "id": "/macros/Macro3",
+    "label": "/macros/Macro3",
+    "value": ""
+   },
+   {
+    "id": "/macros/after_homing",
+    "label": "/macros/after_homing",
+    "value": ""
+   },
+   {
+    "id": "/macros/after_reset",
+    "label": "/macros/after_reset",
+    "value": ""
+   },
+   {
+    "id": "/macros/after_unlock",
+    "label": "/macros/after_unlock",
+    "value": ""
+   },
+   {
+    "id": "/start/must_home",
+    "label": "/start/must_home",
+    "value": "1"
+   },
+   {
+    "id": "/start/deactivate_parking",
+    "label": "/start/deactivate_parking",
+    "value": "0"
+   },
+   {
+    "id": "/start/check_limits",
+    "label": "/start/check_limits",
+    "value": "1"
+   },
+   {
+    "id": "/parking/enable",
+    "label": "/parking/enable",
+    "value": "0"
+   },
+   {
+    "id": "/parking/axis",
+    "label": "/parking/axis",
+    "value": "2"
+   },
+   {
+    "id": "/parking/target_mpos_mm",
+    "label": "/parking/target_mpos_mm",
+    "value": "-5.000"
+   },
+   {
+    "id": "/parking/rate_mm_per_min",
+    "label": "/parking/rate_mm_per_min",
+    "value": "800.000"
+   },
+   {
+    "id": "/parking/pullout_distance_mm",
+    "label": "/parking/pullout_distance_mm",
+    "value": "5.000"
+   },
+   {
+    "id": "/parking/pullout_rate_mm_per_min",
+    "label": "/parking/pullout_rate_mm_per_min",
+    "value": "250.000"
+   },
+   {
+    "id": "/user_outputs/analog0_hz",
+    "label": "/user_outputs/analog0_hz",
+    "value": "5000"
+   },
+   {
+    "id": "/user_outputs/analog1_hz",
+    "label": "/user_outputs/analog1_hz",
+    "value": "5000"
+   },
+   {
+    "id": "/user_outputs/analog2_hz",
+    "label": "/user_outputs/analog2_hz",
+    "value": "5000"
+   },
+   {
+    "id": "/user_outputs/analog3_hz",
+    "label": "/user_outputs/analog3_hz",
+    "value": "5000"
+   },
+   {
+    "id": "/arc_tolerance_mm",
+    "label": "/arc_tolerance_mm",
+    "value": "0.002"
+   },
+   {
+    "id": "/junction_deviation_mm",
+    "label": "/junction_deviation_mm",
+    "value": "0.010"
+   },
+   {
+    "id": "/verbose_errors",
+    "label": "/verbose_errors",
+    "value": "1"
+   },
+   {
+    "id": "/report_inches",
+    "label": "/report_inches",
+    "value": "0"
+   },
+   {
+    "id": "/enable_parking_override_control",
+    "label": "/enable_parking_override_control",
+    "value": "0"
+   },
+   {
+    "id": "/use_line_numbers",
+    "label": "/use_line_numbers",
+    "value": "0"
+   },
+   {
+    "id": "/planner_blocks",
+    "label": "/planner_blocks",
+    "value": "16"
+   }
+  ]
+ }
+}
