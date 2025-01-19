@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "PTV09A4015FB103"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "PTV09A4015FB103")
+        (spec "default")
+    )
+)

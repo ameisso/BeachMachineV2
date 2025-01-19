@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Pot_bourns")(type "KiCad")(uri "${KIPRJMOD}/libs/Bourns_PTV09A-4025F-B103/PTV09A-4025F-B103/KiCad")(options "")(descr ""))
+  (lib (name "regulator")(type "KiCad")(uri "${KIPRJMOD}/libs/AP2112K-3.3TRG1")(options "")(descr ""))
+)

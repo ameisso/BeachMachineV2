@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'PTV09A_4025F_B103'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Bourns", "PTV09A-4025F-B103" (!) = "", "PTV09A4015FB103", "Other", "652-PTV09A-4025FB103", "https://www.mouser.co.uk/ProductDetail/Bourns/PTV09A-4025F-B103?qs=okKRLHKnSlbwMbAO07mw0g%3D%3D", "PTV09A-4025F-B103", "https://www.arrow.com/en/products/ptv09a-4025f-b103/bourns?region=nac", "Potentiometer 9mm horizontal 10K flat", "https://www.bourns.com/docs/Product-Datasheets/PTV09.pdf", "15.5 mm"
+END_PART
+
+END.

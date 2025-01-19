@@ -1,0 +1,28 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model PTV09A-4025F-B103
+#/757946/947671/2.50/5/4/Variable Resistor
+DEF PTV09A-4025F-B103 VR 0 30 Y Y 1 F N
+F0 "VR" 950 300 50 H V L CNN
+F1 "PTV09A-4025F-B103" 950 200 50 H V L CNN
+F2 "PTV09A4015FB103" 950 100 50 H I L CNN
+F3 "https://www.bourns.com/docs/Product-Datasheets/PTV09.pdf" 950 0 50 H I L CNN
+F4 "Potentiometer 9mm horizontal 10K flat" 950 -100 50 H I L CNN "Description"
+F5 "15.5" 950 -200 50 H I L CNN "Height"
+F6 "Bourns" 950 -300 50 H I L CNN "Manufacturer_Name"
+F7 "PTV09A-4025F-B103" 950 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "652-PTV09A-4025FB103" 950 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Bourns/PTV09A-4025F-B103?qs=okKRLHKnSlbwMbAO07mw0g%3D%3D" 950 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "PTV09A-4025F-B103" 950 -700 50 H I L CNN "Arrow Part Number"
+F11 "https://www.arrow.com/en/products/ptv09a-4025f-b103/bourns?region=nac" 950 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X CCW 1 0 0 200 R 50 50 0 0 P
+X WIPER 2 0 -100 200 R 50 50 0 0 P
+X CW 3 0 -200 200 R 50 50 0 0 P
+X MH1 MH1 1100 0 200 L 50 50 0 0 P
+X MH2 MH2 1100 -100 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 900 100 900 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
