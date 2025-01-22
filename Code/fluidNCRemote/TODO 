@@ -1,0 +1,3 @@
+- reset MPOS from arduino 
+- disable soft limits in config file 
+- remove hold on file 
