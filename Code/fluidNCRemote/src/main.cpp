@@ -90,7 +90,9 @@ void zero()
 void playFile()
 {
     DEBUG_PRINT("play ");
-    telnetClient.print("$LocalFS/Run=shortLoop.nc\n");
+    telnetClient.print("$LocalFS/Run=");
+    telnetClient.print(programName);
+    telnetClient.print("\n");
 }
 
 void setup()

@@ -8,7 +8,7 @@ WiFiClient telnetClient;
 
 const char *ssid = "Antoine_AP";
 const char *password = "papepipopu";
-
+String programName = "shortLoop.nc";
 IPAddress FluidNCIP(192, 168, 2, 126);
 
 void initWiFi();
