@@ -15,7 +15,7 @@ axes:
     max_rate_mm_per_min: 5000
     acceleration_mm_per_sec2: 1000
     max_travel_mm: 313
-    soft_limits: true
+    soft_limits: false
     motor0:
       limit_neg_pin: NO_PIN
       hard_limits: false
@@ -30,7 +30,7 @@ axes:
     max_rate_mm_per_min: 5000
     acceleration_mm_per_sec2: 1000
     max_travel_mm: 230
-    soft_limits: true
+    soft_limits: false
     motor0:
       limit_neg_pin: NO_PIN
       hard_limits: false
@@ -45,7 +45,7 @@ axes:
     max_rate_mm_per_min: 12000
     acceleration_mm_per_sec2: 500
     max_travel_mm: 80
-    soft_limits: true
+    soft_limits: false
     motor0:
       limit_neg_pin: NO_PIN
       hard_limits: false

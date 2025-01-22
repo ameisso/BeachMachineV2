@@ -32,9 +32,9 @@ void readResponse(WiFiClient *client)
     {
         if (millis() - timeout > 5000)
         {
-            DEBUG_PRINTLN(">>> Client Timeout !");
-            client->stop();
-          //  connectTelnet();
+          //  DEBUG_PRINTLN(">>> Client Timeout !");
+            // client->stop();
+            //  connectTelnet();
             return;
         }
     }
@@ -44,6 +44,12 @@ void readResponse(WiFiClient *client)
         if (line.startsWith("ok"))
         {
             //   DEBUG_PRINTLN(line);
+        }
+        else if (line.startsWith("[MSG:INFO: MSG,PROGRAM DONE]"))
+        {
+            DEBUG_PRINTLN("PROGRAM LOOP");
+            delay(1000);
+            playFile();
         }
         else
         {
@@ -84,7 +90,7 @@ void zero()
 void playFile()
 {
     DEBUG_PRINT("play ");
-    telnetClient.print("$LocalFS/Run=manapelle1.nc\n");
+    telnetClient.print("$LocalFS/Run=shortLoop.nc\n");
 }
 
 void setup()
@@ -101,9 +107,8 @@ void setup()
 void loop()
 {
     readResponse(&telnetClient);
-    if (debugTimer > 3000)
+    if (debugTimer > 10000)
     {
         debugTimer = 0;
-      //  jog(0, -6, 1000);
     }
 }
