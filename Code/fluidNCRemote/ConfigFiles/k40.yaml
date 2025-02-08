@@ -40,13 +40,7 @@ axes:
         direction_pin: I2SO.6:high
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
-  z:
-    steps_per_mm: 157.75
-    max_rate_mm_per_min: 12000
-    acceleration_mm_per_sec2: 500
-    max_travel_mm: 80
-    soft_limits: false
-    motor0:
+    motor1:
       limit_neg_pin: NO_PIN
       hard_limits: false
       pulloff_mm: 1
@@ -55,6 +49,23 @@ axes:
         direction_pin: I2SO.4
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
+  z:
+    steps_per_mm: 100.000
+    max_rate_mm_per_min: 5000.000
+    acceleration_mm_per_sec2: 100.000
+    max_travel_mm: 5.000
+    soft_limits: true
+    homing:
+      cycle: 1
+      positive_direction: true
+      mpos_mm: 5.000
+
+    motor0:
+      rc_servo:
+        pwm_hz: 50
+        output_pin: gpio.22
+        min_pulse_us: 1000
+        max_pulse_us: 2000
 i2so:
   bck_pin: gpio.16
   data_pin: gpio.21
