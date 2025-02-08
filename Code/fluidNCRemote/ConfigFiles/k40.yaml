@@ -53,12 +53,12 @@ axes:
     steps_per_mm: 100.000
     max_rate_mm_per_min: 5000.000
     acceleration_mm_per_sec2: 100.000
-    max_travel_mm: 5.000
-    soft_limits: true
-    homing:
-      cycle: 1
-      positive_direction: true
-      mpos_mm: 5.000
+    max_travel_mm: 1.000
+    soft_limits: false
+    # homing:
+    #   cycle: 1
+    #   positive_direction: true
+    #   mpos_mm: 5.000
 
     motor0:
       rc_servo:
