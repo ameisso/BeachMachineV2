@@ -32,7 +32,7 @@ void readResponse(WiFiClient *client)
     {
         if (millis() - timeout > 5000)
         {
-          //  DEBUG_PRINTLN(">>> Client Timeout !");
+            //  DEBUG_PRINTLN(">>> Client Timeout !");
             // client->stop();
             //  connectTelnet();
             return;
@@ -60,6 +60,7 @@ void readResponse(WiFiClient *client)
 
 void jog(int x, int y, int feedrate)
 {
+    releaseAlarms();
     DEBUG_PRINT("jog ");
     DEBUG_PRINT(x);
     DEBUG_PRINT(" ");
@@ -83,16 +84,31 @@ void jog(int x, int y, int feedrate)
 
 void zero()
 {
+    releaseAlarms();
     DEBUG_PRINT("zero ");
     telnetClient.print("G10 L20 P1 X0 Y0 Z0\n");
+}
+
+void releaseAlarms()
+{
+    telnetClient.print("~\n");
+    telnetClient.print("$X\n");
 }
 
 void playFile()
 {
     DEBUG_PRINT("play ");
+    releaseAlarms();
+
     telnetClient.print("$LocalFS/Run=");
     telnetClient.print(programName);
     telnetClient.print("\n");
+}
+
+void stopPlayback()
+{
+    DEBUG_PRINTLN("stop playback");
+    telnetClient.print("!\n");
 }
 
 void setup()
@@ -112,5 +128,6 @@ void loop()
     if (debugTimer > 10000)
     {
         debugTimer = 0;
+        // stopPlayback();
     }
 }

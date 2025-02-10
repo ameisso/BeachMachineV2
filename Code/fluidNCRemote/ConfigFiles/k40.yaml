@@ -50,16 +50,11 @@ axes:
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
   z:
-    steps_per_mm: 100.000
-    max_rate_mm_per_min: 5000.000
-    acceleration_mm_per_sec2: 100.000
-    max_travel_mm: 0.500
+    steps_per_mm: 100
+    max_rate_mm_per_min: 5000
+    acceleration_mm_per_sec2: 100
+    max_travel_mm: 0.5
     soft_limits: false
-    # homing:
-    #   cycle: 1
-    #   positive_direction: true
-    #   mpos_mm: 5.000
-
     motor0:
       rc_servo:
         pwm_hz: 50
@@ -79,10 +74,10 @@ sdcard:
   card_detect_pin: gpio.39
 control:
   safety_door_pin: NO_PIN
-  reset_pin: NO_PIN
+  reset_pin: gpio.33:pu:low
   feed_hold_pin: NO_PIN
   cycle_start_pin: NO_PIN
-  macro0_pin: gpio.33:pu:low
+  macro0_pin: NO_PIN
   macro1_pin: NO_PIN
   macro2_pin: NO_PIN
   macro3_pin: NO_PIN
@@ -110,15 +105,11 @@ user_outputs:
   digital3_pin: NO_PIN
 start:
   must_home: true
-
-# TX -> gpio.0 -> SDA on the board
-# RX -> gpio.4 -> SCL on the board
 uart1:
   txd_pin: gpio.0
   rxd_pin: gpio.4
   baud: 115200
   mode: 8N1
-
 uart_channel1:
   uart_num: 1
   report_interval_ms: 5000

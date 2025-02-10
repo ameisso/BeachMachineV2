@@ -15,4 +15,6 @@ void initWiFi();
 void connectTelnet();
 void jog(int x, int y, int feedrate = 100);
 void zero();
+void releaseAlarms();
 void playFile(); 
+void stopPlayback();
