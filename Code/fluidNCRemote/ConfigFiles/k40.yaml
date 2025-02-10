@@ -53,7 +53,7 @@ axes:
     steps_per_mm: 100.000
     max_rate_mm_per_min: 5000.000
     acceleration_mm_per_sec2: 100.000
-    max_travel_mm: 1.000
+    max_travel_mm: 0.500
     soft_limits: false
     # homing:
     #   cycle: 1
@@ -64,8 +64,8 @@ axes:
       rc_servo:
         pwm_hz: 50
         output_pin: gpio.22
-        min_pulse_us: 1000
-        max_pulse_us: 2000
+        min_pulse_us: 2000
+        max_pulse_us: 1000
 i2so:
   bck_pin: gpio.16
   data_pin: gpio.21
