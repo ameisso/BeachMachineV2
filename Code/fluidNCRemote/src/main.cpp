@@ -13,6 +13,18 @@ void initWiFi()
     Serial.println(WiFi.localIP());
 }
 
+void initHardware()
+{
+    DEBUG_PRINTLN("init hardware");
+    upButton.setPressedHandler(pressedHandler);
+    downButton.setPressedHandler(pressedHandler);
+
+    leftButton.setPressedHandler(pressedHandler);
+    rightButton.setPressedHandler(pressedHandler);
+    zeroButton.setPressedHandler(pressedHandler);
+    playButton.setPressedHandler(pressedHandler);
+}
+
 void connectTelnet()
 {
     DEBUG_PRINT("Connecting telnet...");
@@ -22,7 +34,7 @@ void connectTelnet()
         delay(2000);
         return;
     }
-    DEBUG_PRINTLN(" ok");
+    DEBUG_PRINTLN("ok");
 }
 
 void readResponse(WiFiClient *client)
@@ -82,6 +94,37 @@ void jog(int x, int y, int feedrate)
     telnetClient.print("\n");
 }
 
+void pressedHandler(Button2 &b)
+{
+    // DEBUG_PRINT(b.getPin());
+    // DEBUG_PRINTLN(" pressed");
+    switch (b.getPin())
+    {
+    case UP_PIN:
+        jog(0, 1, JOG_FEEDRATE);
+        DEBUG_PRINTLN("jog up");
+        break;
+    case DOWN_PIN:
+        jog(0, -1, JOG_FEEDRATE);
+        DEBUG_PRINTLN("jog down");
+        break;
+    case LEFT_PIN:
+        jog(-1, 0, JOG_FEEDRATE);
+        DEBUG_PRINTLN("jog left");
+        break;
+    case RIGHT_PIN:
+        jog(1, 0, JOG_FEEDRATE);
+        DEBUG_PRINTLN("jog right");
+        break;
+    case ZERO_PIN:
+        zero();
+        break;
+    case PLAY_PIN:
+        playFile(false);
+        break;
+    }
+}
+
 void zero()
 {
     releaseAlarms();
@@ -92,7 +135,7 @@ void zero()
 
 void restartController()
 {
-    DEBUG_PRINTLN("reset ");
+    DEBUG_PRINTLN("restart FluidNC...");
     telnetClient.print("$Bye\n");
     delay(7000);
     connectTelnet();
@@ -110,7 +153,8 @@ void playFile(bool restart)
     if (restart)
     {
         restartController();
-        DEBUG_PRINTLN("play ");
+        DEBUG_PRINT("play ");
+        DEBUG_PRINTLN(programName);
     }
 
     telnetClient.print("$LocalFS/Run=");
@@ -130,6 +174,7 @@ void setup()
     delay(1000);
     initWiFi();
     connectTelnet();
+    initHardware();
     delay(1000);
     playFile(true);
 }
@@ -137,6 +182,13 @@ void setup()
 void loop()
 {
     readResponse(&telnetClient);
+    upButton.loop();
+    downButton.loop();
+    leftButton.loop();
+    rightButton.loop();
+    zeroButton.loop();
+    playButton.loop();
+
     if (debugTimer > 10000)
     {
         debugTimer = 0;
