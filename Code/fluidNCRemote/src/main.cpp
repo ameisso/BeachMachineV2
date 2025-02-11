@@ -86,7 +86,9 @@ void zero()
 {
     releaseAlarms();
     DEBUG_PRINT("zero ");
-    telnetClient.print("G10 L20 P1 X0 Y0 Z0\n");
+    telnetClient.print("G90\n");
+    telnetClient.print("G0 Z-10 \n");
+    telnetClient.print("G10 L20 P1 X0 Y0 ZO\n");
 }
 
 void releaseAlarms()
