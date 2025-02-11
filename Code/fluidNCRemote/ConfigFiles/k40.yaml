@@ -53,7 +53,7 @@ axes:
     steps_per_mm: 100
     max_rate_mm_per_min: 5000
     acceleration_mm_per_sec2: 100
-    max_travel_mm: 0.5
+    max_travel_mm: 2
     soft_limits: false
     motor0:
       rc_servo:

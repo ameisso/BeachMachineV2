@@ -49,7 +49,7 @@ void readResponse(WiFiClient *client)
         {
             DEBUG_PRINTLN("PROGRAM LOOP");
             delay(1000);
-            playFile();
+            playFile(false);
         }
         else
         {
@@ -85,10 +85,17 @@ void jog(int x, int y, int feedrate)
 void zero()
 {
     releaseAlarms();
-    DEBUG_PRINT("zero ");
-    telnetClient.print("G90\n");
-    telnetClient.print("G0 Z-10 \n");
-    telnetClient.print("G10 L20 P1 X0 Y0 ZO\n");
+    DEBUG_PRINTLN("zero ");
+    telnetClient.print("G91\n");
+    telnetClient.print("G92 X0 Y0 Z0\n");
+}
+
+void restartController()
+{
+    DEBUG_PRINTLN("reset ");
+    telnetClient.print("$Bye\n");
+    delay(7000);
+    connectTelnet();
 }
 
 void releaseAlarms()
@@ -97,10 +104,14 @@ void releaseAlarms()
     telnetClient.print("$X\n");
 }
 
-void playFile()
+void playFile(bool restart)
 {
-    DEBUG_PRINT("play ");
     releaseAlarms();
+    if (restart)
+    {
+        restartController();
+        DEBUG_PRINTLN("play ");
+    }
 
     telnetClient.print("$LocalFS/Run=");
     telnetClient.print(programName);
@@ -119,9 +130,8 @@ void setup()
     delay(1000);
     initWiFi();
     connectTelnet();
-    zero();
     delay(1000);
-    playFile();
+    playFile(true);
 }
 
 void loop()
