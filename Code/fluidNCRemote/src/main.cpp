@@ -134,7 +134,7 @@ void pressedHandler(Button2 &b)
         zero();
         break;
     case PLAY_PIN:
-        playFile(false);
+        playFile(true);
         break;
     }
 }
@@ -152,6 +152,7 @@ void restartController()
     DEBUG_PRINTLN("restart FluidNC...");
     telnetClient.print("$Bye\n");
     delay(7000);
+    initWiFi();
     connectTelnet();
 }
 
