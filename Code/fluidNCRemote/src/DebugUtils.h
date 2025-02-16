@@ -1,6 +1,3 @@
-
-
-
 #define DEBUG
 
 #ifdef DEBUG

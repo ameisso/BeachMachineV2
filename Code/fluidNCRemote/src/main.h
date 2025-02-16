@@ -5,22 +5,22 @@
 #include <Button2.h>
 #include "pinUtils.h"
 
-#define JOG_FEEDRATE 100
+#define JOG_FEEDRATE 1000
+#define DISTANCE_RANGE 50
 
 elapsedMillis debugTimer;
 WiFiClient telnetClient;
 
-const char *ssid = "Antoine_AP";
+const char *ssid = "BeachMachine";
 const char *password = "papepipopu";
 String programName = "shortLoop.nc";
-IPAddress FluidNCIP(192, 168, 2, 126);
+IPAddress FluidNCIP(192, 168, 0, 1);
 
 
 Button2 upButton(UP_PIN, INPUT_PULLUP,true);
 Button2 downButton(DOWN_PIN, INPUT_PULLUP,true);
 Button2 leftButton(LEFT_PIN, INPUT_PULLUP,true);
 Button2 rightButton(RIGHT_PIN, INPUT_PULLUP,true);
-
 Button2 zeroButton(ZERO_PIN, INPUT_PULLUP,true);
 Button2 playButton(PLAY_PIN, INPUT_PULLUP,true);
 

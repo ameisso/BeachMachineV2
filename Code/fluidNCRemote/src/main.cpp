@@ -15,14 +15,23 @@ void initWiFi()
 
 void initHardware()
 {
-    DEBUG_PRINTLN("init hardware");
+    DEBUG_PRINT("init hardware ...");
+
+    pinMode(POT_2_PIN, INPUT);
+    upButton.begin(UP_PIN, INPUT_PULLUP, true);
+    downButton.begin(DOWN_PIN, INPUT_PULLUP, true);
+    leftButton.begin(LEFT_PIN, INPUT_PULLUP, true);
+    rightButton.begin(RIGHT_PIN, INPUT_PULLUP, true);
+    zeroButton.begin(ZERO_PIN, INPUT_PULLUP, true);
+    playButton.begin(PLAY_PIN, INPUT_PULLUP, true);
+
     upButton.setPressedHandler(pressedHandler);
     downButton.setPressedHandler(pressedHandler);
-
     leftButton.setPressedHandler(pressedHandler);
     rightButton.setPressedHandler(pressedHandler);
     zeroButton.setPressedHandler(pressedHandler);
     playButton.setPressedHandler(pressedHandler);
+    DEBUG_PRINTLN("DONE");
 }
 
 void connectTelnet()
@@ -40,16 +49,16 @@ void connectTelnet()
 void readResponse(WiFiClient *client)
 {
     unsigned long timeout = millis();
-    while (client->available() == 0)
-    {
-        if (millis() - timeout > 5000)
-        {
-            //  DEBUG_PRINTLN(">>> Client Timeout !");
-            // client->stop();
-            //  connectTelnet();
-            return;
-        }
-    }
+    // while (client->available() == 0)
+    // {
+    //     if (millis() - timeout > 5000)
+    //     {
+    //         //  DEBUG_PRINTLN(">>> Client Timeout !");
+    //         // client->stop();
+    //         //  connectTelnet();
+    //         return;
+    //     }
+    // }
     while (client->available())
     {
         String line = client->readStringUntil('\r');
@@ -96,24 +105,29 @@ void jog(int x, int y, int feedrate)
 
 void pressedHandler(Button2 &b)
 {
-    // DEBUG_PRINT(b.getPin());
-    // DEBUG_PRINTLN(" pressed");
+    int distance = map(analogRead(POT_2_PIN), 4095, 0, 0, DISTANCE_RANGE);
+    DEBUG_PRINTLN("\n____");
+    DEBUG_PRINTLN_PARAM("RAW distance", analogRead(POT_2_PIN));
+    DEBUG_PRINTLN_PARAM("distances", distance);
+
+    DEBUG_PRINT(b.getPin());
+    DEBUG_PRINTLN(" pressed");
     switch (b.getPin())
     {
     case UP_PIN:
-        jog(0, 1, JOG_FEEDRATE);
+        jog(0, distance, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog up");
         break;
     case DOWN_PIN:
-        jog(0, -1, JOG_FEEDRATE);
+        jog(0, -distance, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog down");
         break;
     case LEFT_PIN:
-        jog(-1, 0, JOG_FEEDRATE);
+        jog(-distance, 0, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog left");
         break;
     case RIGHT_PIN:
-        jog(1, 0, JOG_FEEDRATE);
+        jog(distance, 0, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog right");
         break;
     case ZERO_PIN:
@@ -153,10 +167,9 @@ void playFile(bool restart)
     if (restart)
     {
         restartController();
-        DEBUG_PRINT("play ");
-        DEBUG_PRINTLN(programName);
     }
-
+    DEBUG_PRINT("play ");
+    DEBUG_PRINTLN(programName);
     telnetClient.print("$LocalFS/Run=");
     telnetClient.print(programName);
     telnetClient.print("\n");
@@ -170,18 +183,19 @@ void stopPlayback()
 
 void setup()
 {
+#ifdef DEBUG
     Serial.begin(115200);
+#endif
     delay(1000);
     initWiFi();
     connectTelnet();
     initHardware();
     delay(1000);
-    playFile(true);
+    //  playFile(true);
 }
 
 void loop()
 {
-    readResponse(&telnetClient);
     upButton.loop();
     downButton.loop();
     leftButton.loop();
@@ -189,9 +203,10 @@ void loop()
     zeroButton.loop();
     playButton.loop();
 
-    if (debugTimer > 10000)
+    if (debugTimer > 1000)
     {
         debugTimer = 0;
         // stopPlayback();
     }
+   readResponse(&telnetClient);
 }
