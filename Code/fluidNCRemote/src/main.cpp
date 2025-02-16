@@ -52,9 +52,13 @@ void readResponse(WiFiClient *client)
     while (client->available())
     {
         String line = client->readStringUntil('\r');
-        if (line.startsWith("ok"))
+        if (line.indexOf("ok") >= 0)
         {
-            //   DEBUG_PRINTLN(line);
+            // DEBUG_PRINTLN_PARAM("OK LINE ", line);
+        }
+        else if (line.length() <= 1)
+        {
+            // DEBUG_PRINTLN_PARAM("SHORT LINE ", line);
         }
         else if (line.startsWith("[MSG:INFO: MSG,PROGRAM DONE]"))
         {
@@ -64,7 +68,8 @@ void readResponse(WiFiClient *client)
         }
         else
         {
-            DEBUG_PRINT(line);
+           // DEBUG_PRINT(">>> ");
+            DEBUG_PRINTLN(line);
         }
     }
 }
