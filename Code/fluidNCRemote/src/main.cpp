@@ -81,10 +81,10 @@ void jog(int x, int y, int feedrate)
         initWiFi();
     }
     releaseAlarms();
-    DEBUG_PRINT("jog ");
+   // DEBUG_PRINT("jog ");
     DEBUG_PRINT(x);
     DEBUG_PRINT(" ");
-    DEBUG_PRINT(y);
+    DEBUG_PRINTLN(y);
 
     telnetClient.print("$J=G91 G21");
     if (x != 0)
@@ -105,29 +105,29 @@ void jog(int x, int y, int feedrate)
 void pressedHandler(Button2 &b)
 {
     int distance = map(analogRead(POT_2_PIN), 4095, 0, 0, DISTANCE_RANGE);
-    DEBUG_PRINTLN("\n____");
-    DEBUG_PRINTLN_PARAM("RAW distance", analogRead(POT_2_PIN));
-    DEBUG_PRINTLN_PARAM("distances", distance);
+    // DEBUG_PRINTLN("\n____");
+    //  DEBUG_PRINTLN_PARAM("RAW distance", analogRead(POT_2_PIN));
+    // DEBUG_PRINTLN_PARAM("distances", distance);
 
-    DEBUG_PRINT(b.getPin());
-    DEBUG_PRINTLN(" pressed");
+    // DEBUG_PRINT(b.getPin());
+    // DEBUG_PRINTLN(" pressed");
     switch (b.getPin())
     {
     case UP_PIN:
-        jog(0, distance, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog up");
+        jog(0, distance, JOG_FEEDRATE);
         break;
     case DOWN_PIN:
-        jog(0, -distance, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog down");
+        jog(0, -distance, JOG_FEEDRATE);
         break;
     case LEFT_PIN:
-        jog(-distance, 0, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog left");
+        jog(-distance, 0, JOG_FEEDRATE);
         break;
     case RIGHT_PIN:
-        jog(distance, 0, JOG_FEEDRATE);
         DEBUG_PRINTLN("jog right");
+        jog(distance, 0, JOG_FEEDRATE);
         break;
     case ZERO_PIN:
         zero();
@@ -208,5 +208,5 @@ void loop()
         debugTimer = 0;
         // stopPlayback();
     }
-   readResponse(&telnetClient);
+    readResponse(&telnetClient);
 }
