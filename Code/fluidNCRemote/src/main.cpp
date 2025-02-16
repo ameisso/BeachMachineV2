@@ -76,6 +76,10 @@ void readResponse(WiFiClient *client)
 
 void jog(int x, int y, int feedrate)
 {
+    if ((WiFi.status() != WL_CONNECTED))
+    {
+        initWiFi();
+    }
     releaseAlarms();
     DEBUG_PRINT("jog ");
     DEBUG_PRINT(x);
