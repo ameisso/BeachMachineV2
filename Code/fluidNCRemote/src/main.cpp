@@ -49,16 +49,6 @@ void connectTelnet()
 void readResponse(WiFiClient *client)
 {
     unsigned long timeout = millis();
-    // while (client->available() == 0)
-    // {
-    //     if (millis() - timeout > 5000)
-    //     {
-    //         //  DEBUG_PRINTLN(">>> Client Timeout !");
-    //         // client->stop();
-    //         //  connectTelnet();
-    //         return;
-    //     }
-    // }
     while (client->available())
     {
         String line = client->readStringUntil('\r');
