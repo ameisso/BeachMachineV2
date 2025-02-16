@@ -13,7 +13,7 @@ WiFiClient telnetClient;
 
 const char *ssid = "BeachMachine";
 const char *password = "papepipopu";
-String programName = "shortLoop.nc";
+String programName = "manapelle2.nc";
 IPAddress FluidNCIP(192, 168, 0, 1);
 
 
